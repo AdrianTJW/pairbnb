@@ -37,6 +37,9 @@ gem 'clearance'
 gem 'omniauth-facebook'
 # Gem to authenticate the use of Facebook details
 
+gem 'figaro'
+# Gem to hide facebook_key and facebook_secret
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

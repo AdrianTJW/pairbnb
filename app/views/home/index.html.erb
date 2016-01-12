@@ -1,2 +1,14 @@
-<h1>WELCOME HOME</h1>
-<p>Rent unique places to stay from local hosts in 190+ countries.</p>
+<div class="row">
+	<div class="col-lg-4">
+	</div>
+
+	<div class="col-lg-4">
+		<h1 class="text-center jumbotron">WELCOME HOME</h1>
+		<p class="text-center">Rent unique places to stay from local hosts in 190+ countries.</p>
+
+		<% if current_user %>
+			<%= link_to "List a Property", new_listing_path, id: "new_listing" %>
+			<%= link_to "Show all Properties", listings_path, id: "show_all_listing" %>
+		<% end %>
+	</div>
+</div>

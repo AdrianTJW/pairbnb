@@ -1,23 +1,18 @@
 Rails.application.routes.draw do
-  # get 'home/index'
+  resources :listings
 
-  # get 'users/create'
+  resources :users, only: [:new]
 
-  # get 'users/new'
+  # Alternative way to get FB authentication
+  # match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  # match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  # match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
-  # get 'users/edit'
+  # FB authentication
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/signin' => 'sessions#new', :as => :signin
 
-  # get 'users/show'
-
-  # get 'users/update'
-
-  # get 'users/destroy'
-
-  # resources :users, only: [:create]
-
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

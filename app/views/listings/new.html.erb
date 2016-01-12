@@ -1,0 +1,29 @@
+<h1>Post your new property here!</h1>
+
+<%= form_for @listing do |form| %>
+  <div class="text-field">
+    <%= form.label :title %>
+    <%= form.text_field :title, type: 'title' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :description %>
+    <%= form.text_field :description, type: 'description' %>
+  </div>
+
+  <div class="text-field">
+    <%= form.label :location %>
+    <%= form.text_field :location, type: 'location' %>
+  </div>
+
+	<div class="text-field">
+    <%= form.label :email %>
+    <%= form.text_field :email, type: 'email' %>
+  </div>	
+
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
